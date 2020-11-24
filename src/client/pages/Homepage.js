@@ -3,6 +3,8 @@ import '../css/home.css';
 import iphoneimg from '../images/iphone2.png';
 import headphoneimg from '../images/headphone.png';
 import cameraimg from '../images/dslr.png';
+import NavbarMain from '../components/NavbarMain';
+
 
 
 function Homepage() {
@@ -10,6 +12,8 @@ function Homepage() {
     return (
         <>
             <section className="w-100 min-vh-100 m-0 p-0" style={{ backgroundColor: "#686EE2" }}>
+
+           <NavbarMain/>
 
                 <div className="row w-100 h-100 m-0 p-0">
 
@@ -28,7 +32,7 @@ function Homepage() {
                     </div>
 
                     {/* row two */}
-                    <div className="col-sm-4 w-100 m-0 d-flex align-items-center justify-content-center w-100 h-100" >
+                    <div className="col-sm-4 w-100 m-0 d-flex align-items-center justify-content-center "  >
                         {/* <div  className="home-image-iphone">
                         <img src={iphoneimg} alt="" width="1080px" height="1920px" />
                         </div> */}
@@ -37,7 +41,7 @@ function Homepage() {
                           <img src={cameraimg} alt="" width="100%" height="100%"  />
                           </div> */}
 
-                        <div className="home-image-headphone">
+                        <div className="home-image-headphone"style={{ height: "90vh" }} >
                             <img src={headphoneimg} alt="" width="100%" height="100%" />
                         </div>
 

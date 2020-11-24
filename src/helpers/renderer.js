@@ -19,19 +19,37 @@ export default (req) =>{
       );
 
 
-return `<html>
-<head>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@100;300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="main.css">
+return `
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--link rel="icon" href="%PUBLIC_URL%/favicon.ico" / -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="freewish|| free wish || Makeawish"
+      content="Makeawish is a site where you can wish for free under 1.5 lakh amount and if your lucky we will ship you for free at zero charges freewish.in"
+    />
+    <!-- link rel="apple-touch-icon" href="%PUBLIC_URL%/m.svg"-->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <!-- link rel="manifest" href="%PUBLIC_URL%/manifest.json" /-->
 
-</head>
-<body>
-  <div id="root">${content}</div>
-  <script src="bundle.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
 
-</body>
+    <div id="root">${content}</div>
+    <script src="bundle.js"></script>
+
+
+ 
+  </body>
 </html>`;
 
 }
