@@ -114,9 +114,9 @@ function NavbarMain(props) {
         );
     }
     return (
-        <>
+        <div style={{backgroundColor : "#686EE2"}}>
             {menu}
-        </>
+        </div>
     );
 }
 export default NavbarMain;

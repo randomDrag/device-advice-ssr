@@ -13,7 +13,7 @@ function Homepage() {
         <>
             <section className="w-100 min-vh-100 m-0 p-0" style={{ backgroundColor: "#686EE2" }}>
 
-           <NavbarMain/>
+          
 
                 <div className="row w-100 h-100 m-0 p-0">
 

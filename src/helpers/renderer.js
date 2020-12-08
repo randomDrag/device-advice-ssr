@@ -6,16 +6,16 @@ import {StaticRouter} from 'react-router-dom';
 import {renderToString} from 'react-dom/server';
 import {renderRoutes} from 'react-router-config'
 import Routes from '../client/Routes';
-import main from '../../public/main.css';
+import {Provider} from 'react-redux';
 
 export default (req) =>{
-  console.log(req.path);
+
     const content = renderToString(
-      
+       
           <StaticRouter location={req.path} context={{}}>
             <div>{renderRoutes(Routes)}</div>
           </StaticRouter>
-        
+    
       );
 
 
