@@ -9,7 +9,8 @@
 .main-heading{
  
    padding: 15px;
-   height: 90vh;
+   height: 100%;
+   width: 100%;
 
 }
 .main-heading-1{
@@ -89,4 +90,20 @@ width: 70%;
   width: 400px;
 
 
+}
+
+.bar-heading-1{
+   padding: 1.2em 1em;
+   
+   color: #E4F5E5;
+   font-family: 'Abril Fatface', cursive;
+   text-transform: uppercase;
+   font-size: 1.7rem;
+   
+}
+
+.bar-div{
+
+   height: 100%;
+   width: 100%;
 }
