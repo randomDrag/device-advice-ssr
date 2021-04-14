@@ -38,9 +38,14 @@ class Homepage extends React.Component {
 
                                 <h1 className="bar-heading-1"> you looking for ? </h1>
 
-                                <Submitform/>
-                               
-                               
+                                <div>
+
+                                    <Submitform />
+
+                                </div>
+
+
+
                             </div>
 
 
@@ -73,9 +78,9 @@ class Homepage extends React.Component {
                 {/* section two for the trending or top things artical based on latest update  */}
 
 
-                <section  style={{ backgroundColor: "#686EE2" , width:"100%" , height:"100vh"}} >
+                <section style={{ backgroundColor: "#686EE2", width: "100%", height: "100vh" }} >
 
-                        
+
 
                 </section>
             </>

@@ -1,5 +1,8 @@
 import React from 'react';
 
+import '../css/extra.css';
+
+import TypeSelector from '../components/Type.selector';
 
 class Submitform extends React.Component {
 
@@ -9,12 +12,11 @@ class Submitform extends React.Component {
         return (
 
             <>
-                <form>
+                <div>
 
-                    <select className="ui selection dropdown violet"  name="" id=""></select>
-
-                    <button className="circular ui icon button" type="submit" ><i className="search icon"></i></button>
-                </form>
+                <TypeSelector/>
+                
+                </div>
             </>
 
         )
