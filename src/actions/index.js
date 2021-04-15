@@ -5,7 +5,7 @@ export function selectType(option){
 
     return {
 
-        TYPE : TYPE_SEC,
+        type : TYPE_SEC,
         payload : option
     };
 
