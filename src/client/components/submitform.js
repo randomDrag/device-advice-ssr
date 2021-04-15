@@ -14,8 +14,13 @@ class Submitform extends React.Component {
             <>
                 <div>
 
+
                 <TypeSelector/>
+
                 
+
+
+
                 </div>
             </>
 
