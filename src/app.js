@@ -1,6 +1,7 @@
 // server starting point 
 import express from 'express';
 
+import createStore from './helpers/createStore';
 import renderer from './helpers/renderer';
 
 
@@ -11,7 +12,9 @@ app.use(express.static('public'));
 
 app.get("*", (req , res)=>{
 
-res.send(renderer(req));
+const store = createStore(req);
+
+res.send(renderer(req,store));
 
 
 

@@ -1,7 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {selectType} from '../../actions';
 
 class TypeSelector extends React.Component {
 
+    constructor(props){
+        super(props);
+
+        this.state = {term : ''}
+    }
 
 
     render() {
@@ -10,8 +17,14 @@ class TypeSelector extends React.Component {
 
 
             <div>
-                
-                <select className="ui selection dropdown" name="" id=""></select>
+
+                <select className="ui selection dropdown" name="" id="">
+
+                    <option value="mobile">MOBILE</option>
+                    <option value="earphone">Earphone</option>
+                    <option value="laptops">Laptops</option>
+
+                </select>
 
             </div>
 
@@ -29,8 +42,12 @@ class TypeSelector extends React.Component {
 
 }
 
+const mapStateToProps = ()=>{
 
-export default TypeSelector;
+    
+}
+
+export default connect()(TypeSelector);
 
 
 

@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-
+import typeselector from "./typeselector";
 
 
 export default combineReducers({
 
-    null: null
+   typeselector
 
 });
