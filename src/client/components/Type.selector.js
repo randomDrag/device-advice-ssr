@@ -1,35 +1,48 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {selectType} from '../../actions';
+import {selected} from '../../actions';
 
 class TypeSelector extends React.Component {
+
+
+    //construtor 
 
     constructor(props){
         super(props);
 
-        this.state = {term : ""}
+        this.state = {selected_option: ""}
 
         this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
 
+    //method 
+
+
+
     handleDropdownChange(e) {
         const value = e.target.value;
       
-        this.props.selectType(value)  
-        this.setState({ term: value });
+        this.props.selected(value)  
+        this.setState({ selected_option: value });
        
     
       }
+
+
+
+//reader method
+
+
     render() {
 
-        console.log(this.props);
+      
         return (
 
 
             <div>
 
-                <select className="ui selection dropdown" name="" id="" value={this.state.term} onChange={this.handleDropdownChange}>
+                <select className="ui selection dropdown" name="" id="" value={this.state.selected_option} onChange={this.handleDropdownChange}>
 
                     <option value="mobile">MOBILE</option>
                     <option value="earphone">Earphone</option>
@@ -55,12 +68,12 @@ class TypeSelector extends React.Component {
 
 const mapStateToProps = (state)=>{
 
- console.log(state);
-    return { selected : state.term};
+
+    return { selected : state.selected_option};
 
 }
 
-export default connect(mapStateToProps, {selectType})(TypeSelector);
+export default connect(mapStateToProps, {selected})(TypeSelector);
 
 
 

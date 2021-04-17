@@ -1,1 +1,4 @@
-export const TYPE_SEC ="type_sec";
+//SELECTED option in category
+
+
+export const SELECTED_OPTION ="type_sec";

@@ -1,10 +1,10 @@
-import {TYPE_SEC} from '../../actions/const';
+import {SELECTED_OPTION} from '../../actions/const';
 
 
 
 export default function(state = {}, action) {
     switch(action.type) {
-    case TYPE_SEC:
+    case SELECTED_OPTION :
       return  action.payload;
     default:
       return state;

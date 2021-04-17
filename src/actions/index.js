@@ -1,12 +1,16 @@
-import {TYPE_SEC} from "./const";
+import {SELECTED_OPTION} from "./const";
 
 
-export function selectType(option){
+// this action is for selecting between catogry
+
+export function selected(option){
 
     return {
 
-        type : TYPE_SEC,
+        type : SELECTED_OPTION,
         payload : option
     };
 
 }
+
+
