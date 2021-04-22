@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {selected} from '../../actions';
+import { selected } from '../../actions';
 
 class TypeSelector extends React.Component {
 
 
     //construtor 
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state = {selected_option: ""}
+        this.state = { selected_option: null }
 
         this.handleDropdownChange = this.handleDropdownChange.bind(this);
     }
@@ -22,31 +22,31 @@ class TypeSelector extends React.Component {
 
     handleDropdownChange(e) {
         const value = e.target.value;
-      
-        this.props.selected(value)  
+
+        this.props.selected(value)
         this.setState({ selected_option: value });
-       
-    
-      }
+
+
+    }
 
 
 
-//reader method
+    //reader method
 
 
     render() {
 
-      
+
         return (
 
 
             <div>
 
-                <select className="ui selection dropdown" name="" id="" value={this.state.selected_option} onChange={this.handleDropdownChange}>
-
-                    <option value="mobile">MOBILE</option>
-                    <option value="earphone">Earphone</option>
-                    <option value="laptops">Laptops</option>
+                <select className="ui selection dropdown" name="" id="" value={this.state.selected_option} onChange={this.handleDropdownChange} >
+                    <option value="null">SELECT</option>
+                    <option value="MOBILE">MOBILE</option>
+                    <option value="EARPHONE">EARPHONES</option>
+                    <option value="LAPTOPS">LAPTOPS</option>
 
                 </select>
 
@@ -66,14 +66,14 @@ class TypeSelector extends React.Component {
 
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
 
 
-    return { selected : state.selected_option};
+    return { selected: state.selected_option };
 
 }
 
-export default connect(mapStateToProps, {selected})(TypeSelector);
+export default connect(mapStateToProps, { selected })(TypeSelector);
 
 
 
