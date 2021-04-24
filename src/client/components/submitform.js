@@ -6,6 +6,8 @@ import TypeSelector from '../components/Type.selector';
 
 import { connect } from 'react-redux'
 
+import MobileForm from '../components/forms/mobile.forms';
+
 class Submitform extends React.Component {
 
     constructor(props) {
@@ -19,7 +21,7 @@ class Submitform extends React.Component {
     //helper for slected from  
     selector() {
 
-        <TypeSelector />
+        return  <TypeSelector /> ;
 
     }
 
@@ -28,23 +30,7 @@ class Submitform extends React.Component {
 
     mobile_form() {
 
-        return (
-
-            <div className="ui form">
-                <div className="fields">
-                    <div className="field">
-                        <label>First name</label>
-                        <input type="text" placeholder={this.state.typeselector} />
-                    </div>
-                    <div className="field">
-                        <label>Middle name</label>
-                        <input type="text" placeholder="Middle Name" />
-                    </div>
-
-                </div>
-            </div>
-
-        );
+        return <MobileForm/>;
 
 
     }
@@ -65,28 +51,7 @@ class Submitform extends React.Component {
                         {this.selector()}
 
 
-
-                        <form >
-
-
-                            <div className="ui form">
-                                <div className="fields">
-                                    <div className="field">
-                                        <label>First name</label>
-                                        <input type="text" placeholder="name" />
-                                    </div>
-                                    <div className="field">
-                                        <label>Middle name</label>
-                                        <input type="text" placeholder="Middle Name" />
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                            <button type="submit" className="circular ui icon button " ><i className="search icon"></i></button>
-
-                        </form>
+                        {this.mobile_form()}
 
 
 
@@ -102,7 +67,7 @@ class Submitform extends React.Component {
                 <>
 
                     {this.selector()}
-                    
+
                     <div className="ui form">
 
                         <div className="fields">
