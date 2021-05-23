@@ -29,7 +29,7 @@ class Submitform extends React.Component {
         return (
             <>
                 <div className={className}>
-                    <input type="text" placeholder={fields.placeholder} {...fields.input} />
+                    <input type="text" className="inputMobile" placeholder={fields.placeholder} {...fields.input} />
                     <div style={{ color: "red" }}>
                         {touched ? error : ""}
                     </div>
@@ -66,8 +66,8 @@ class Submitform extends React.Component {
                     <div className="ui form">
                         <div className="three fields">
                             <div className="field">
-                                <label>First name</label>
-                                <Field name="price" placeholder="ENTER PRICE" component={this.inputForm} />
+                                <label>Amount</label>
+                                <Field name="price" className="inputMobile" placeholder="ENTER PRICE" component={this.inputForm} />
                             </div>
                             <div className="field">
                                 <label>Middle name</label>
@@ -206,14 +206,15 @@ const validate = (values) => {
         errors.Name = 'Required'
     }
 
-    if (!values.Phone_Number) {
-        errors.Phone_Number = 'Required'
-    } else if (isNaN(Number(values.Phone_Number))) {
-        errors.Phone_Number = 'Must be a number'
-    } else if (!validator.isMobilePhone(values.Phone_Number,'en-IN')  ) {
+    if (!values.price) {
+        errors.price = 'Required'
+    } else if (isNaN(Number(values.price))) {
+        errors.price = 'Must be a number'
+   
+    } else if (!validator.isInt(values.price,{min: 3000, max: 300000 })) {
 
       
-        errors.Phone_Number = 'Enter mobile number'
+        errors.price = 'Enter correct amount';
     }
     return errors
 }
