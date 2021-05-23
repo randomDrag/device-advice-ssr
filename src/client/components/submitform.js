@@ -4,9 +4,12 @@ import '../css/extra.css';
 
 import TypeSelector from '../components/Type.selector';
 
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-import MobileForm from '../components/forms/mobile.forms';
+import { Field, reduxForm } from 'redux-form';
+
+
+import validator from 'validator';
 
 class Submitform extends React.Component {
 
@@ -18,10 +21,37 @@ class Submitform extends React.Component {
 
 
 
+    inputForm(fields) {
+        const { meta: { error, touched } } = fields;
+
+        const className = `${touched && error ? 'field error' : ''}`;
+
+        return (
+            <>
+                <div className={className}>
+                    <input type="text" placeholder={fields.placeholder} {...fields.input} />
+                    <div style={{ color: "red" }}>
+                        {touched ? error : ""}
+                    </div>
+
+                </div>
+
+            </>
+
+
+        );
+
+
+
+    }
+
+
+
+
     //helper for slected from  
     selector() {
 
-        return  <TypeSelector /> ;
+        return <TypeSelector />;
 
     }
 
@@ -30,7 +60,26 @@ class Submitform extends React.Component {
 
     mobile_form() {
 
-        return <MobileForm/>;
+        return (
+            <>
+                <form >
+                    <div className="ui form">
+                        <div className="three fields">
+                            <div className="field">
+                                <label>First name</label>
+                                <Field name="price" placeholder="ENTER PRICE" component={this.inputForm} />
+                            </div>
+                            <div className="field">
+                                <label>Middle name</label>
+                                <Field name="display" placeholder="Mobile Number" component={this.inputForm} />
+                            </div>
+                           
+                        </div>
+                    </div>
+                </form>
+
+            </>
+        );
 
 
     }
@@ -120,6 +169,9 @@ class Submitform extends React.Component {
 
 
 
+    //render
+
+
     render() {
 
 
@@ -145,6 +197,30 @@ class Submitform extends React.Component {
 }
 
 
+
+const validate = (values) => {
+
+    const errors = {}
+
+    if (!values.Name) {
+        errors.Name = 'Required'
+    }
+
+    if (!values.Phone_Number) {
+        errors.Phone_Number = 'Required'
+    } else if (isNaN(Number(values.Phone_Number))) {
+        errors.Phone_Number = 'Must be a number'
+    } else if (!validator.isMobilePhone(values.Phone_Number,'en-IN')  ) {
+
+      
+        errors.Phone_Number = 'Enter mobile number'
+    }
+    return errors
+}
+
+
+
+
 const mapStateToProps = (state) => {
 
 
@@ -156,4 +232,10 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps)(Submitform);
+export default reduxForm(
+
+    { form: "mobileForm" , validate}
+)
+
+
+    (connect(mapStateToProps)(Submitform));
