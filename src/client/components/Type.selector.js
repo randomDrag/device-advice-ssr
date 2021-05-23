@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { selected } from '../../actions';
 
+import '../css/typesec.ui.css';
 class TypeSelector extends React.Component {
 
 
@@ -14,6 +15,12 @@ class TypeSelector extends React.Component {
         this.state = { selected_option: null }
 
         this.handleDropdownChange = this.handleDropdownChange.bind(this);
+
+
+
+
+
+
     }
 
     //method 
@@ -31,6 +38,8 @@ class TypeSelector extends React.Component {
 
 
 
+
+
     //reader method
 
 
@@ -42,18 +51,16 @@ class TypeSelector extends React.Component {
 
             <div>
 
-                <select className="ui selection dropdown" name="" id="" value={this.state.selected_option} onChange={this.handleDropdownChange} >
-                    <option value="null">SELECT</option>
+                <select className="ui selection dropdown" value={this.state.selected_option} onChange={this.handleDropdownChange} >
+                    <option  value="null">SELECT</option>
                     <option value="MOBILE">MOBILE</option>
                     <option value="EARPHONE">EARPHONES</option>
                     <option value="LAPTOPS">LAPTOPS</option>
 
                 </select>
 
+
             </div>
-
-
-
 
         );
 
