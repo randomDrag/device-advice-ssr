@@ -173,7 +173,40 @@
 
 .inputMobile{
 
+outline: none;
 background: transparent;
+padding: 10px;
+border: 2px solid #E4F5E5;
+color: #E4F5E5;
+border-radius: 8px;
+
+}
+
+
+
+.inputMobile:hover {
+
+
+
+    border: 2px solid #E4F5E5;
+    
+    
+    }
+
+
+
+
+.inputMobile::placeholder{
+
+    color: #E4F5E5;
+    font-family: 'montserrat';
+}
+
+
+
+.form-mobile-container input{
+    
+    padding: 10px;
 
 }
 

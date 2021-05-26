@@ -17,6 +17,10 @@ class Submitform extends React.Component {
 
         super(props);
 
+    
+
+        this.renderColorSelector = this.renderColorSelector.bind(this);
+
     }
 
 
@@ -56,26 +60,44 @@ class Submitform extends React.Component {
     }
 
 
+    //options Renderer
 
+     renderColorSelector({ input, meta: { touched, error } }) {
+        let t = ['display' , 'processer' , 'all'] ;
+       return ( <div>
+          <select  className="ui selection dropdown" {...input}>
+            <option value="">Select </option>
+            {t.map(val => (
+              <option value={val} key={val}>
+                {val}
+              </option>
+            ))}
+          </select>
+          {touched && error && <span>{error}</span>}
+        </div> );
+     }
+
+
+
+    // mobile forms created
 
     mobile_form() {
 
         return (
             <>
                 <form >
-                    <div className="ui form">
-                        <div className="three fields">
-                            <div className="field">
-                                <label>Amount</label>
-                                <Field name="price" className="inputMobile" placeholder="ENTER PRICE" component={this.inputForm} />
-                            </div>
-                            <div className="field">
-                                <label>Middle name</label>
-                                <Field name="display" placeholder="Mobile Number" component={this.inputForm} />
-                            </div>
-                           
+
+                    <div className="form-mobile-container">
+                        <div className="Price">
+                            <label>Amount</label>
+                            <Field name="price" className="inputMobile" placeholder="ENTER PRICE" component={this.inputForm} />
                         </div>
+                        <div>
+        <label>Favorite Color</label>
+        <Field name="favoriteColor" component={this.renderColorSelector} />
+      </div>
                     </div>
+
                 </form>
 
             </>
@@ -95,7 +117,7 @@ class Submitform extends React.Component {
             return (
                 <>
 
-                    <div className="ui items ">
+                    <div className="">
 
                         {this.selector()}
 
@@ -210,10 +232,10 @@ const validate = (values) => {
         errors.price = 'Required'
     } else if (isNaN(Number(values.price))) {
         errors.price = 'Must be a number'
-   
-    } else if (!validator.isInt(values.price,{min: 3000, max: 300000 })) {
 
-      
+    } else if (!validator.isInt(values.price, { min: 3000, max: 300000 })) {
+
+
         errors.price = 'Enter correct amount';
     }
     return errors
@@ -235,7 +257,7 @@ const mapStateToProps = (state) => {
 
 export default reduxForm(
 
-    { form: "mobileForm" , validate}
+    { form: "mobileForm", validate }
 )
 
 

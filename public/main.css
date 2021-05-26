@@ -345,6 +345,13 @@ font-size: 1.25rem;
 }
 
 
+.imgSection{
+
+   display :flex;
+   align-items: center;
+   justify-content: center;
+  }
+
 
 
 @media (max-width: 575.98px) {
@@ -354,7 +361,7 @@ font-size: 1.25rem;
       display: flex;
       flex-flow: column;
       justify-content: center;
-      height: 70%;
+      height: 40%;
    }
 
    .main-heading-1 {
@@ -410,6 +417,12 @@ font-size: 1.25rem;
    
   .bar-heading-1{
      display: none;
+  }
+
+
+  .imgSection{
+
+   display :none
   }
 
 }
@@ -588,7 +601,40 @@ font-size: 1.25rem;
 
 .inputMobile{
 
+outline: none;
 background: transparent;
+padding: 10px;
+border: 2px solid #E4F5E5;
+color: #E4F5E5;
+border-radius: 8px;
+
+}
+
+
+
+.inputMobile:hover {
+
+
+
+    border: 2px solid #E4F5E5;
+    
+    
+    }
+
+
+
+
+.inputMobile::placeholder{
+
+    color: #E4F5E5;
+    font-family: 'montserrat';
+}
+
+
+
+.form-mobile-container input{
+    
+    padding: 10px;
 
 }
 

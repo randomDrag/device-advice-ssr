@@ -52,7 +52,7 @@ class Homepage extends React.Component {
                         </div>
 
                         {/* row two */}
-                        <div className="col-sm-4 w-100 m-0 d-flex align-items-center justify-content-center "  >
+                        <div className="col-sm-4 w-100 m-0  imgSection"  >
                             {/* <div  className="home-image-iphone">
                         <img src={iphoneimg} alt="" width="1080px" height="1920px" />
                         </div> */}
