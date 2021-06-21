@@ -636,6 +636,16 @@ border-radius: 8px;
     
     padding: 10px;
 
+
+
+}
+
+.form-mobile-container{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 @media (max-width: 575.98px) { 

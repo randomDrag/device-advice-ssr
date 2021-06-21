@@ -17,7 +17,7 @@ class Submitform extends React.Component {
 
         super(props);
 
-    
+
 
         this.renderColorSelector = this.renderColorSelector.bind(this);
 
@@ -62,20 +62,20 @@ class Submitform extends React.Component {
 
     //options Renderer
 
-     renderColorSelector({ input, meta: { touched, error } }) {
-        let t = ['display' , 'processer' , 'all'] ;
-       return ( <div>
-          <select  className="ui selection dropdown" {...input}>
-            <option value="">Select </option>
-            {t.map(val => (
-              <option value={val} key={val}>
-                {val}
-              </option>
-            ))}
-          </select>
-          {touched && error && <span>{error}</span>}
-        </div> );
-     }
+    renderColorSelector({ input, meta: { touched, error } }) {
+        let t = ['display', 'processer', 'all'];
+        return (<div>
+            <select className="ui selection dropdown" {...input}>
+                <option value="">Select </option>
+                {t.map(val => (
+                    <option value={val} key={val}>
+                        {val}
+                    </option>
+                ))}
+            </select>
+            {touched && error && <span>{error}</span>}
+        </div>);
+    }
 
 
 
@@ -93,9 +93,9 @@ class Submitform extends React.Component {
                             <Field name="price" className="inputMobile" placeholder="ENTER PRICE" component={this.inputForm} />
                         </div>
                         <div>
-        <label>Favorite Color</label>
-        <Field name="favoriteColor" component={this.renderColorSelector} />
-      </div>
+                            <label>Favorite Color</label>
+                            <Field name="favoriteColor" component={this.renderColorSelector} />
+                        </div>
                     </div>
 
                 </form>

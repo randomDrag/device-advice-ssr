@@ -4,7 +4,7 @@
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
-import { renderRoutes } from 'react-router-config'
+import { renderRoutes } from 'react-router-config';
 import Routes from '../client/Routes';
 import { Provider } from 'react-redux';
 
